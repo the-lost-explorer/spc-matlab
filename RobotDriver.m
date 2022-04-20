@@ -58,7 +58,6 @@ classdef RobotDriver < handle
         end
         
         function go2Pose(self,pose,goalThreshold,twistGain)
-            pose
             errorTracker = [pose(1);pose(2)]';
             dist = sqrt((pose(1)*cos(pose(3)) - pose(1))^2 + (pose(2)*sin(pose(3)) - pose(2))^2);
             while sqrt((0 - pose(1))^2 + (0 - pose(2))^2) > goalThreshold

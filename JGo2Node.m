@@ -1,4 +1,4 @@
-function J = JGo2Node(x,sstar,s,sm,L,Np,timeHorizon)
+function J = JGo2Node(x,sstar,s,sm,L,Np,timeHorizon,display)
     e = s - sm;
     sd = sstar - e;
     
@@ -8,5 +8,6 @@ function J = JGo2Node(x,sstar,s,sm,L,Np,timeHorizon)
         sm = sm + L*timeHorizon*x(temp,:)';
         Jtemp = Jtemp + (sd - sm)'*(sd - sm);
     end
+%     display.plotCost(Jtemp);
     J = Jtemp;
 end
