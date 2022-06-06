@@ -17,14 +17,14 @@ robot = RobotDriver(0.05,[1;1;pi/4],display); % Initialize robot with tick speed
 
 display.drawPoint(robot.position);
 global goalPositionWF;
-goalPositionWF = [30;100]; % Goal position in world frame (x,y)
+goalPositionWF = [100;50]; % Goal position in world frame (x,y)
 display.drawPoint(goalPositionWF);
 
 % Perform robot ops
 robot.nodeObservationList('Node 1') = goalPositionWF;
 % robot.moveRobotForTicks(1,0,10);
 % robot.go2Node('Node 1',0.1,[0.9;0.9]);
-Np = 5;
+Np = 10;
 Nc = 5;
 sstar = [0;0];
 s = robot.getNodeLocation('Node 1');
@@ -40,8 +40,8 @@ while sqrt((0 - s(1))^2 + (0 - s(2))^2) > 0
     b = [];
     Aeq = [];
     beq = [];
-    lb = [-20*ones(1,Np),-5*ones(1,Np)];
-    ub = [20*ones(1,Np),5*ones(1,Np)];
+    lb = [-40*ones(1,Np),-5*ones(1,Np)];
+    ub = [40*ones(1,Np),5*ones(1,Np)];
     nonlcon = [];
     options = optimoptions('fmincon','Display','iter','Algorithm','sqp');
     [x,fval,exitflag,output] = fmincon(f,x0,A,b,Aeq,beq,lb,ub,nonlcon,options);
