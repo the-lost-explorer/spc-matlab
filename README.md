@@ -1,6 +1,6 @@
 # Sensor-based Predictive Control (SPC)
 
-This is an experimentation repository for SPC. Implementation is derived on papers cited below.
+This is an experimentation repository for SPC. Implementation is derived from papers cited below.
 
 1. G. Allibert, E. Courtial and F. Chaumette, "Predictive Control for Constrained Image-Based Visual Servoing," in IEEE Transactions on Robotics, vol. 26, no. 5, pp. 933-939, Oct. 2010, doi: 10.1109/TRO.2010.2056590.
 
